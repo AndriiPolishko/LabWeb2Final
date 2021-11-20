@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="HTML-CSS/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,8 +21,9 @@
     <div class="form-container">
         <div class="error-message hide"></div>
         <div class="success hide">Great success</div>
-    <div class="error-message hide">Error</div>
+
         <form class = "contact-form">
+            <div class="error-message hide">Error</div>
             <h3>Submit your message</h3>
             <label for="name"></label>
             <input type="text" id="name" placeholder="Enter your name" value="" autocomplete="off"><br>
@@ -44,6 +45,6 @@
 
     </div>
 
-    <script type="module" src="../Scripts/sendMail.js"></script>
+    <script type="module" src="Scripts/sendMail.js"></script>
 </body>
 </html>
