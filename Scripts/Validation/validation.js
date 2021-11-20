@@ -34,6 +34,7 @@ export function NameValidation() {
                 submit.textContent = "Blocked"
             else {
                 error.classList.add('hide')
+                error.textContent=''
                 submit.removeAttribute('disabled')
                 submit.textContent = "Send"
             }
@@ -54,6 +55,7 @@ export function EmailValidation() {
                 submit.textContent = "Blocked"
             else {
                 error.classList.add('hide')
+                error.textContent=''
                 submit.removeAttribute('disabled')
                 submit.textContent = "Send"
             }
@@ -74,6 +76,7 @@ export function MessageValidation() {
                 submit.textContent = "Blocked"
             else {
                 error.classList.add('hide')
+                error.textContent=''
                 submit.removeAttribute('disabled')
                 submit.textContent = "Send"
             }
