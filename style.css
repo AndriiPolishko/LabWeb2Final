@@ -65,8 +65,17 @@ input, textarea {
 .error-message {
     width: 100%;
     margin-top: 2rem;
-    border:none;
-    border-bottom: 1px solid black;
+    border:1px solid black;
+
     text-align: center;
     background-color: #fa5113;
+}
+
+.success {
+    width: 100%;
+    margin-top: 2rem;
+    border:1px solid black;
+
+    text-align: center;
+    background-color: #3d8651;
 }
