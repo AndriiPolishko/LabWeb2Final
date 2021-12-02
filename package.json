@@ -1,0 +1,35 @@
+{
+  "name": "labweb2final",
+  "version": "1.0.0",
+  "description": "I hope that`s final version of Lab2",
+  "main": "Scripts/sendMail.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndriiPolishko/LabWeb2Final.git"
+  },
+  "type": "module",
+  "keywords": [
+    "Contact",
+    "Form"
+  ],
+  "author": "Andrii Polishko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AndriiPolishko/LabWeb2Final/issues"
+  },
+  "homepage": "https://github.com/AndriiPolishko/LabWeb2Final#readme",
+  "devDependencies": {
+    "@types/sanitize-html": "^2.5.0",
+    "eslint": "^8.3.0",
+    "husky": "^7.0.4",
+    "prettier": "2.5.0",
+    "stylelint": "^14.1.0",
+    "stylelint-config-standard": "^24.0.0"
+  },
+  "dependencies": {
+    "sanitize-html": "^2.5.3"
+  }
+}
