@@ -1,5 +1,5 @@
 function validateName(name) {
-    return name.length > 3 && name.trim().length > 3
+    return name.trim().length > 3
 }
 
 
@@ -9,7 +9,7 @@ function validateEmail(email) {
 }
 
 function validateMessage(message) {
-    return message.length > 7 && message.trim().length > 7
+    return  message.trim().length > 3
 }
 
 
