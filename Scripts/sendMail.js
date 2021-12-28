@@ -36,12 +36,14 @@ submit.addEventListener('click',(event)=> {
                 submit.removeAttribute('disabled')
             },5*1000)
             console.log("Success");
-            document.getElementById("success").classList.remove('hide')
+             const pop_up = document.querySelector(".error-message")
+             pop_up.style.backgroundColor = "green"
+             pop_up.innerText = "Great Success!!!"
             name.value='';
             email.value='';
             message.value='';
             setTimeout(()=>
-                document.getElementById("success").classList.add('hide'),
+                    document.querySelector(".error-message").innerText="",
                 5*1000)},
             (error)=>{console.log("Error :",error)})
 

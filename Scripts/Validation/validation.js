@@ -8,130 +8,54 @@ function validateEmail(email) {
     return re.test(String(email).toLowerCase());
 }
 
-function validateMessage(message) {
-    return  message.trim().length > 3
-}
-
-
 import {error, name,email,message, submit} from "../sendMail.js";
 
+function mouseMove(part,validateFunc) {
+    if(!validateFunc(part.value)) {
+        block(`${part.id}`)
+    }
+    else {
+        if(error.textContent !== `${part.id} is incorrect`)
+            submit.textContent = "Blocked"
+        else {
+            //error.classList.add('hide')
+            error.textContent=''
+            error.style.backgroundColor = "inherit"
+            submit.removeAttribute('disabled')
+            submit.textContent = "Send"
+        }
+    }
+}
+
+function val(part,validateFunc) {
+
+    part.addEventListener('mouseleave',()=> {
+        mouseMove(part,validateFunc)
+    })
+
+    part.addEventListener('mouseenter',()=> {
+        mouseMove(part,validateFunc)
+    })
+
+}
+
+function block(part) {
+    error.classList.remove('hide')
+    error.textContent=`${part} is incorrect`
+    error.style.backgroundColor = "red"
+    submit.setAttribute('disabled','true')
+    submit.textContent = "Blocked"
+}
+
 export function NameValidation() {
-
-    name.addEventListener('mouseleave',()=> {
-        if(!validateName(name.value)) {
-            error.classList.remove('hide')
-            error.textContent="Name is incorrect"
-            submit.setAttribute('disabled','true')
-            submit.textContent = "Blocked"
-        }
-        else {
-            if(error.textContent==="Message is incorrect" || error.textContent==="Email is incorrect")
-                submit.textContent = "Blocked"
-            else {
-                error.classList.add('hide')
-                error.textContent=''
-                submit.removeAttribute('disabled')
-                submit.textContent = "Send"
-            }
-        }
-    })
-
-    name.addEventListener('mouseenter',()=> {
-        if(!validateName(name.value)) {
-            error.classList.remove('hide')
-            error.textContent="Name is incorrect"
-            submit.setAttribute('disabled','true')
-            submit.textContent = "Blocked"
-        }
-        else {
-            if(error.textContent==="Message is incorrect" || error.textContent==="Email is incorrect")
-                submit.textContent = "Blocked"
-            else {
-                error.classList.add('hide')
-                error.textContent=''
-                submit.removeAttribute('disabled')
-                submit.textContent = "Send"
-            }
-        }
-    })
+    val(name,validateName);
 }
 
 export function EmailValidation() {
-    email.addEventListener('mouseleave',()=> {
-        if(!validateEmail(email.value)) {
-            error.classList.remove('hide')
-            error.textContent="Email is incorrect"
-            submit.setAttribute('disabled','true')
-            submit.textContent = "Blocked"
-        }
-        else {
-            if(error.textContent==="Message is incorrect" || error.textContent==="Name is incorrect")
-                submit.textContent = "Blocked"
-            else {
-                error.classList.add('hide')
-                error.textContent=''
-                submit.removeAttribute('disabled')
-                submit.textContent = "Send"
-            }
-        }
-    })
-
-    email.addEventListener('mouseenter',()=> {
-        if(!validateEmail(email.value)) {
-            error.classList.remove('hide')
-            error.textContent="Email is incorrect"
-            submit.setAttribute('disabled','true')
-            submit.textContent = "Blocked"
-        }
-        else {
-            if(error.textContent==="Message is incorrect" || error.textContent==="Name is incorrect")
-                submit.textContent = "Blocked"
-            else {
-                error.classList.add('hide')
-                error.textContent=''
-                submit.removeAttribute('disabled')
-                submit.textContent = "Send"
-            }
-        }
-    })
+    val(email,validateEmail)
 }
 
 export function MessageValidation() {
-    message.addEventListener('mouseleave',()=> {
-        if(!validateMessage(message.value)) {
-            error.classList.remove('hide')
-            error.textContent="Message is incorrect"
-            submit.setAttribute('disabled','true')
-            submit.textContent = "Blocked"
-        }
-        else {
-            if(error.textContent==="Email is incorrect" || error.textContent==="Name is incorrect")
-                submit.textContent = "Blocked"
-            else {
-                error.classList.add('hide')
-                error.textContent=''
-                submit.removeAttribute('disabled')
-                submit.textContent = "Send"
-            }
-        }
-    })
-
-    message.addEventListener('mouseenter',()=> {
-        if(!validateMessage(message.value)) {
-            error.classList.remove('hide')
-            error.textContent="Message is incorrect"
-            submit.setAttribute('disabled','true')
-            submit.textContent = "Blocked"
-        }
-        else {
-            if(error.textContent==="Email is incorrect" || error.textContent==="Name is incorrect")
-                submit.textContent = "Blocked"
-            else {
-                error.classList.add('hide')
-                error.textContent=''
-                submit.removeAttribute('disabled')
-                submit.textContent = "Send"
-            }
-        }
-    })
+    val(message,validateName)
 }
+

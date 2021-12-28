@@ -83,9 +83,9 @@ input, textarea {
     width: 100%;
     margin-top: 2rem;
     border:1px solid var(--black);
-
+    background-color: inherit;
     text-align: center;
-    background-color: var(--red);
+   /* background-color: var(--red);*/
 }
 
 .success {
