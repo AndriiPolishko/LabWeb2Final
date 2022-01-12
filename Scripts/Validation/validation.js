@@ -1,6 +1,6 @@
 
-let error = document.querySelector("#error")
-import {name,email,message, submit,sendMail} from "../sendMail.js";
+
+import {error,name,email,message, submit,sendMail} from "../sendMail.js";
 
 let form = document.querySelector(".contact-form")
 name.addEventListener('input',function(event) {

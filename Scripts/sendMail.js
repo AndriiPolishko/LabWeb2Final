@@ -1,5 +1,4 @@
-/*import {NameValidation,EmailValidation,MessageValidation} from "./Validation/validation.js";*/
-
+export let error = document.querySelector("#error")
 
 export let name = document.getElementById("name")
 
@@ -13,8 +12,6 @@ export const submit = document.querySelector(".submit");
 const spinner = document.getElementById('spinner');
 
 export function sendMail(event) {
-    submit.setAttribute('disabled','true')
-    submit.textContent = "Blocked"
     event.preventDefault();
     let tempParams = {
         from_name: name.value,
@@ -29,10 +26,8 @@ export function sendMail(event) {
                     spinner.classList.add('hide');
                     submit.removeAttribute('disabled')
                 },5*1000)
-                console.log("Success");
-                const pop_up = document.querySelector(".error-message")
-                pop_up.style.backgroundColor = "green"
-                pop_up.innerText = "Great Success!!!"
+                error.style.backgroundColor = "green"
+                error.innerText = "Great Success!!!"
                 name.value='';
                 email.value='';
                 message.value='';
