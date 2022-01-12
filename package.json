@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "I hope that`s final version of Lab2",
   "main": "Scripts/sendMail.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +11,6 @@
     "type": "git",
     "url": "git+https://github.com/AndriiPolishko/LabWeb2Final.git"
   },
-  "type": "module",
   "keywords": [
     "Contact",
     "Form"
@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/AndriiPolishko/LabWeb2Final#readme",
   "devDependencies": {
-    "@types/sanitize-html": "^2.5.0",
+    "@types/sanitize-html": "^2.6.2",
+    "dotenv": "^10.0.0",
     "eslint": "^8.3.0",
     "husky": "^7.0.4",
     "prettier": "2.5.0",

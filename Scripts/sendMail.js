@@ -11,12 +11,19 @@ export const submit = document.querySelector(".submit");
 
 const spinner = document.getElementById('spinner');
 
+function sanitize(element,unsanitizedHTML) {
+    let tempElement = document.createElement('div');
+    tempElement.innerText = element,unsanitizedHTML;
+    element.innerHTML = tempElement.innerHTML;
+    return element
+}
+
 export function sendMail(event) {
     event.preventDefault();
     let tempParams = {
-        from_name: name.value,
-        from_email: email.value,
-        message: message.value
+        from_name: sanitize(name).value,
+        from_email: sanitize(email).value,
+        message: sanitize(message).value
     }
 
     emailjs.send('service_r6f0duy','template_3qvjzop',tempParams)

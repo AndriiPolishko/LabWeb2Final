@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 
+
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script type="text/javascript">
         (function() {
@@ -18,35 +19,35 @@
     <title>Contact Form</title>
 </head>
 <body>
-    <div class="form-container">
-        <div class="error-message" id="error"></div>
-        <!--<div class="success hide" id="success">Great success</div>-->
+<div class="form-container">
+    <div class="error-message" id="error"></div>
+    <!--<div class="success hide" id="success">Great success</div>-->
 
-        <form class = "contact-form" novalidate>
-            <div class="error-message hide">Error</div>
-            <h3>Submit your message</h3>
-            <label for="name"></label>
-            <input type="text" id="name" placeholder="Enter your name" value="" autocomplete="off" required minlength="2"><br>
+    <form class = "contact-form" novalidate>
+        <div class="error-message hide">Error</div>
+        <h3>Submit your message</h3>
+        <label for="name"></label>
+        <input type="text" id="name" placeholder="Enter your name" value="" autocomplete="off" required minlength="2"><br>
 
-            <label for="email"></label>
-            <input type="email" id="email" placeholder="Enter your email" value="" autocomplete="off" required minlength="8"><br>
+        <label for="email"></label>
+        <input type="email" id="email" placeholder="Enter your email" value="" autocomplete="off" required minlength="8"><br>
 
-            <!---<label for="number"></label>
-            <input type="text" id="number" placeholder="Enter your phone number" value=""><br>--->
+        <!---<label for="number"></label>
+        <input type="text" id="number" placeholder="Enter your phone number" value=""><br>--->
 
-            <label for="message"></label>
-            <textarea id="message" placeholder="message" value="" required minlength="4"></textarea><br>
-            <!--
-            <input type="submit" class="submit" value="Send">--->
-            <button class = "submit" >Enter Your Data To Submit</button>
+        <label for="message"></label>
+        <textarea id="message" placeholder="message" value="" required minlength="4"></textarea><br>
+        <!--
+        <input type="submit" class="submit" value="Send">--->
+        <button class = "submit" >Enter Your Data To Submit</button>
 
 
-        </form>
+    </form>
 
-    </div>
-    <div class="loading hide" id="spinner"></div>
+</div>
+<div class="loading hide" id="spinner"></div>
 
-    <script type="module" src="Scripts/Validation/validation.js"></script>
-    <script type="module" src="Scripts/sendMail.js"></script>
+<script type="module" src="Scripts/Validation/validation.js"></script>
+<script type="module" src="Scripts/sendMail.js"></script>
 </body>
 </html>

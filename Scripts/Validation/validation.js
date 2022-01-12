@@ -4,13 +4,13 @@ import {error,name,email,message, submit,sendMail} from "../sendMail.js";
 
 let form = document.querySelector(".contact-form")
 name.addEventListener('input',function(event) {
-   if(name.validity.valid) {
-       error.textContent="";
-       error.style.backgroundColor="var(--black)";
-   }
-   else {
-       showError();
-   }
+    if(name.validity.valid) {
+        error.textContent="";
+        error.style.backgroundColor="var(--black)";
+    }
+    else {
+        showError();
+    }
 });
 
 email.addEventListener('input',function(event) {
