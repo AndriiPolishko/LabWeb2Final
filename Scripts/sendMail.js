@@ -11,14 +11,16 @@ export const submit = document.querySelector(".submit");
 
 const spinner = document.getElementById('spinner');
 
-function sanitize(element,unsanitizedHTML) {
+function sanitize(element) {
+    let unsanitizedHTML = element.innerHTML
     let tempElement = document.createElement('div');
-    tempElement.innerText = element,unsanitizedHTML;
+    tempElement.innerText = unsanitizedHTML;
     element.innerHTML = tempElement.innerHTML;
     return element
 }
 
 export function sendMail(event) {
+    submit.setAttribute('disabled','true')
     event.preventDefault();
     let tempParams = {
         from_name: sanitize(name).value,
@@ -29,18 +31,16 @@ export function sendMail(event) {
     emailjs.send('service_r6f0duy','template_3qvjzop',tempParams)
         .then(()=>{
                 spinner.classList.remove('hide');
-                setTimeout(()=> {
-                    spinner.classList.add('hide');
-                    submit.removeAttribute('disabled')
-                },5*1000)
                 error.style.backgroundColor = "green"
                 error.innerText = "Great Success!!!"
                 name.value='';
                 email.value='';
                 message.value='';
-                setTimeout(()=>
-                        document.querySelector(".error-message").innerText="",
-                    5*1000)},
+                setTimeout(()=> {
+                    spinner.classList.add('hide');
+                    submit.removeAttribute('disabled')
+                    document.querySelector(".error-message").innerText=""
+                },5*1000)},
             (error)=>{console.log("Error :",error)})
 }
 

@@ -46,23 +46,18 @@ form.addEventListener('submit', function(event) {
 function showError() {
     if(name.validity.valueMissing) {
         error.textContent = "Enter your name, please";
-        console.log("err1")
     }
     else if(name.validity.tooShort) {
         error.textContent = "Your name is too short";
-        console.log("err2")
     }
     else if(email.validity.valueMissing) {
         error.textContent = "Enter your Email, please";
-        console.log("err3")
     }
     else if(email.validity.typeMismatch) {
         error.textContent = "Enter correct Email, please";
-        console.log("err4")
     }
     else if(email.validity.tooShort) {
         error.textContent = "Your Email is too short";
-        console.log("err5")
     }
     else if(message.validity.valueMissing) {
         error.textContent = "Enter your message, please";
